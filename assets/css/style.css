@@ -1,0 +1,635 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+:root {
+    font-family: "Lato", sans-serif;
+    --menuHeight: 46px;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+    --popup-buy-form: 50px;
+}
+
+.spacing-m15 {
+    margin: 15px 0;
+}
+
+.spacing-m16 {
+    margin: 16px 0;
+}
+
+#header {
+    /* Màu sắc */
+    background-color: #000;
+    /* Thiết kế */
+    height: var(--menuHeight);
+    line-height: var(--menuHeight);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    right: 0;
+    left: 0;
+}
+
+.menu,
+.menu-mobile {
+    list-style-type: none;
+    line-height: calc(var(--menuHeight) + 0.4px);
+}
+
+.menu li,
+.menu-mobile li {
+    /* Màu sắc */
+    background-color: #000;
+    /* Thiết kế */
+    display: inline-block;
+    margin-left: -4px;
+    cursor: pointer;
+}
+
+.menu-mobile li {
+    display: block;
+}
+
+.menu>li:first-child {
+    margin-left: 0;
+}
+
+.menu-mobile>li:first-child {
+    display: inline-block;
+}
+
+.menu li:hover,
+.menu-mobile li:hover {
+    background-color: #ccc;
+}
+
+.menu li:hover>a,
+.menu-mobile li:hover>a,
+.menu li:hover .menu-more {
+    color: black;
+}
+
+.menu a,
+.menu-mobile a {
+    /* Màu sắc */
+    color: white;
+    text-decoration: none;
+    /* Thiết kế */
+    display: block;
+    padding: 0 24px;
+}
+
+.menu .sub-menu {
+    display: none;
+    position: absolute;
+    width: 160px;
+    line-height: 40px;
+    z-index: 1;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.menu .sub-menu>li {
+    width: 100%;
+    margin-left: 0;
+    /* Mau sac */
+    background-color: white;
+}
+
+.menu .sub-menu a {
+    margin-left: -10px;
+    color: black;
+}
+
+.menu .sub-menu>li:hover {
+    background-color: #ccc;
+}
+
+.menu li:hover .sub-menu {
+    display: block;
+}
+
+.menu .menu-more {
+    color: white;
+    font-size: 14px;
+    padding-left: 4px;
+    display: inline-block;
+    transform: translateY(2px)
+}
+
+
+/* SEARCH BUTTON */
+
+#header .menu-search-boss {
+    max-height: var(--menuHeight);
+    overflow: hidden;
+}
+
+#header .menu-search,
+#header .menu-zoom {
+    color: white;
+    line-height: calc(var(--menuHeight) + 5px);
+    padding: 0 24px;
+    display: block;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#header .menu-search-boss:hover {
+    background-color: red;
+}
+
+
+/* -------------- CONTENT -------------- */
+
+
+/* BANNER */
+
+.banner {
+    background-color: #000;
+    position: relative;
+    margin-top: var(--menuHeight);
+}
+
+
+/* Ẩn sub-banner */
+
+.banner .sub-banner {
+    display: none;
+}
+
+
+/* Hiện sub-banner đầu tiên */
+
+.banner .sub-banner:first-child {
+    display: block;
+}
+
+.banner .sub-banner img {
+    height: 100% !important;
+    display: block;
+}
+
+.sub-banner .sub-banner-text {
+    color: white;
+    text-align: center;
+    max-width: 55%;
+    margin: 0 auto;
+    padding: 32px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.sub-banner .sub-banner-text h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 10px 0px;
+}
+
+.sub-banner .sub-banner-text p {
+    margin: 15px 0;
+}
+
+
+/* Content all */
+
+.the-name,
+.the-description {
+    text-align: center;
+}
+
+.the-name {
+    font-size: 30px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 10px 0;
+    letter-spacing: 4px;
+}
+
+.the-description {
+    color: #aaa;
+    margin: 15px 0;
+    font-style: italic;
+}
+
+.the-content {
+    text-align: justify;
+    margin: 15px 0;
+}
+
+
+/* BAND */
+
+#band {
+    text-align: center;
+}
+
+#band .member-list {
+    padding: 32px 0;
+}
+
+.sub-member .member-name {
+    margin: 15px 0;
+}
+
+.sub-member .member-img {
+    /*  background-size: cover; */
+    width: 63%;
+    max-width: 153.59px;
+    max-height: 153.59px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.sub-member .member-img img {
+    width: 100% !important;
+    display: block;
+}
+
+
+/* TOUR DATE */
+
+#tour {
+    background-color: #000;
+}
+
+#tour .the-name {
+    color: white;
+}
+
+#tour .tour-date {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+#tour .tour-date .sub-date {
+    color: #757575;
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+#tour .tour-date .sold-out {
+    color: white;
+    background-color: red;
+    padding: 2px 8px;
+    margin-left: 16px;
+}
+
+#tour .tour-date .sold {
+    color: white;
+    background-color: #000;
+    float: right;
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 25px;
+    padding-left: 8px;
+    margin-right: 16px;
+}
+
+
+/* Tour location */
+
+.location-tour {
+    padding: 32px 0;
+}
+
+#tour .location-tour .sub-location-tour {
+    margin-bottom: 16px;
+}
+
+.location-tour .sub-location-tour img {
+    width: 100% !important;
+    margin-bottom: -7px;
+}
+
+.location-tour .sub-location-tour img:hover {
+    opacity: .6;
+}
+
+.location-tour .sub-location-tour .tour-content {
+    background-color: white;
+    padding: 16px;
+    padding-top: 15px;
+}
+
+.sub-location-tour .tour-content .tour-name {
+    font-weight: bold;
+}
+
+.sub-location-tour .tour-content .tour-dates {
+    color: #aaa;
+    margin: 15px 0;
+}
+
+.sub-location-tour .tour-content .tour-description {
+    margin: 15px 0;
+}
+
+.tour-buy {
+    color: white;
+    background-color: #000;
+    border: 0;
+    padding: 8px 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tour-buy:hover,
+#buy-popup .header-close:hover,
+#buy-popup .buy-btn:hover {
+    color: black !important;
+    background-color: #ccc !important;
+}
+
+#tour .tour-buy::after {
+    content: "Buy Tickets";
+}
+
+
+/* CONTACT */
+
+#contact .location-tour {
+    margin: 0;
+}
+
+#contact .location-tour .sub-contact {
+    padding: 0;
+}
+
+#contact .tour-buy {
+    margin: 16px 0;
+    padding: 10px 15px;
+}
+
+#contact .tour-buy::after {
+    content: "SEND";
+}
+
+#contact .sub-contact:first-child {
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+#contact .sub-contact .contact-icon {
+    font-size: 18px;
+    width: 30px;
+    display: inline-block;
+}
+
+.input-style {
+    border: 1px solid rgb(204, 204, 204);
+    padding: 10px;
+    width: 100%;
+}
+
+#contact .sub-contact .top-input {
+    margin-bottom: 8px;
+}
+
+
+/* FOOTER */
+
+#footer {
+    text-align: center;
+    opacity: .6;
+}
+
+#footer .footer-icon {
+    padding: 8px 0;
+}
+
+#footer .footer-icon i {
+    font-size: 23px;
+}
+
+#footer .footer-icon i:hover {
+    opacity: .6;
+}
+
+#footer .footer-copyright {
+    margin: 15px 0;
+}
+
+#footer .footer-copyright a {
+    color: #000;
+}
+
+
+/* BUY POPUP */
+
+#buy-popup {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: 0 8px;
+    display: none;
+    overflow: scroll;
+}
+
+#buy-popup .popup-overlay {
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .5;
+}
+
+#buy-popup .popup-buy-form {
+    margin: 0 auto;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    top: 50px;
+    animation: showPopup .55s;
+}
+
+#buy-popup .buy-form-header {
+    padding: 32px 16px;
+    background-color: #009688;
+    color: white;
+    text-align: center;
+}
+
+#buy-popup .buy-form-header .icon-header {
+    font-size: 29.6px;
+    padding-right: 16px;
+}
+
+#buy-popup .buy-form-header .header-close {
+    font-size: 14px;
+    padding: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+#buy-popup .buy-form-content {
+    padding: 1px 16px;
+}
+
+#buy-popup .buy-form-content .buy-btn {
+    color: white;
+    background-color: #009688;
+    padding: 16px;
+    text-align: center;
+}
+
+#buy-popup .buy-form-footer .tour-buy {
+    background-color: red;
+}
+
+#buy-popup .buy-form-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#buy-popup .buy-form-footer a {
+    color: #2196f3;
+}
+
+@keyframes showPopup {
+    from {
+        top: -25%;
+        opacity: 0;
+    }
+    to {
+        top: var(--popup-buy-form);
+        opacity: 1;
+    }
+}
+
+
+/* BUY POPUP REPONSIVE */
+
+@media (min-width: 993px) {
+     :root {
+        --popup-buy-form: 100px;
+    }
+    #buy-popup .popup-buy-form {
+        width: 900px;
+        top: 100px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+     :root {
+        --popup-buy-form: 100px;
+    }
+    #buy-popup .popup-buy-form {
+        width: 600px;
+        top: 100px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 768px) {
+     :root {
+        --popup-buy-form: 50px;
+    }
+    #buy-popup .popup-buy-form {
+        width: 500px;
+        top: 50px;
+    }
+}
+
+
+/* REPONSIVE */
+
+@media (min-width: 601px) {
+    #header {
+        height: var(--menuHeight) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #header {
+        overflow: hidden;
+    }
+    .sub-member .member-img {
+        width: 60%;
+        max-width: 330px;
+        max-height: 330px;
+    }
+    .menu-mobile {
+        flex-grow: 1;
+    }
+    .menu li {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+    .menu>li:first-child {
+        /* max-width: calc(100% - 63px); */
+        max-width: 50%;
+    }
+    #header .menu-zoom {
+        position: absolute;
+        right: 0;
+    }
+}
+
+
+/* NGHIADX */
+
+
+/* BONUS */
+
+
+/* hiệu ứng search và nút zoom menu */
+
+#header .menu-search,
+#menu-zoom i {
+    transition: transform .6s;
+}
+
+#menu-zoom i {
+    display: inline-block;
+}
+
+#header .menu-search-boss:hover .menu-search {
+    transform: rotateY(180deg);
+}
+
+#header #menu-zoom:hover i {
+    transform: rotateZ(180deg);
+}
+
+.tour-buy {
+    position: relative;
+}
+
+.tour-buy::after {
+    position: relative;
+}
+
+.tour-buy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: red;
+    z-index: 1;
+    transition: width 0.5s;
+}
+
+.tour-buy:hover .tour-buy::before {
+    width: 100%;
+}
